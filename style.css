@@ -14,8 +14,7 @@ body {
 /* BACKGROUND VIDEO */
 #bgVideo {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     object-fit: cover;
     filter: brightness(0.4);
     z-index: -2;
@@ -38,14 +37,16 @@ body {
 
 /* PIN SCREEN */
 #pinScreen {
-    display: none;
+    display: none;              /* IMPORTANT */
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.85);
     z-index: 4;
-    flex-direction: column;
-    justify-content: center;
+
+    /* flex applied ONLY when shown */
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     gap: 20px;
 }
 
