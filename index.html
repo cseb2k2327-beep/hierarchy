@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Living Family Tree</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<video autoplay muted loop id="bgVideo">
+    <source src="videos/background.mp4" type="video/mp4">
+</video>
+
+<!-- LOCKER INTRO -->
+<div id="lockerScreen">
+    <video autoplay muted id="lockerVideo">
+        <source src="videos/locker.mp4" type="video/mp4">
+    </video>
+</div>
+
+<!-- PIN SCREEN -->
+<div id="pinScreen">
+    <h1>SECURE ACCESS</h1>
+    <input type="password" id="pinInput" maxlength="6" placeholder="● ● ● ● ● ●">
+    <button onclick="unlock()">UNLOCK</button>
+    <p id="pinMsg"></p>
+</div>
+
+<!-- TREE GROW VIDEO -->
+<div id="treeVideoScreen">
+    <video autoplay muted id="treeVideo">
+        <source src="videos/tree-grow.mp4" type="video/mp4">
+    </video>
+</div>
+
+<!-- FAMILY TREE -->
+<div id="treeScreen">
+
+    <div class="node rectangle">
+        <input placeholder="Grandfather">
+    </div>
+
+    <div class="line"></div>
+
+    <div class="row">
+        <div class="node circle">
+            <input placeholder="Father">
+        </div>
+
+        <div class="node circle">
+            <input placeholder="Mother">
+        </div>
+    </div>
+
+    <div class="combine-line"></div>
+
+    <div class="node circle">
+        <input placeholder="Child (You)">
+    </div>
+
+    <div class="details">
+        <input type="file">
+        <textarea placeholder="Details..."></textarea>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

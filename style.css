@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+/* BACKGROUND VIDEO */
+#bgVideo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.4);
+}
+
+/* LOCKER */
+#lockerScreen, #treeVideoScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+}
+
+#lockerVideo, #treeVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PIN */
+#pinScreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#pinInput {
+    font-size: 2rem;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid cyan;
+    color: cyan;
+    text-align: center;
+    letter-spacing: 6px;
+}
+
+/* TREE */
+#treeScreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+.node {
+    opacity: 0;
+    animation: appear 1.5s forwards;
+    border: 2px solid cyan;
+    padding: 15px;
+    text-align: center;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+}
+
+.rectangle {
+    width: 200px;
+}
+
+.node input {
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+    outline: none;
+}
+
+/* LINES */
+.line {
+    width: 4px;
+    height: 0;
+    background: cyan;
+    animation: growLine 1.5s forwards;
+}
+
+.combine-line {
+    width: 4px;
+    height: 0;
+    background: cyan;
+    animation: growLine 1.5s forwards;
+}
+
+.row {
+    display: flex;
+    gap: 80px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    animation: appear 2s forwards;
+    animation-delay: 4s;
+}
+
+@keyframes growLine {
+    to { height: 60px; }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
