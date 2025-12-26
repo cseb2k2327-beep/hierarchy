@@ -8,13 +8,13 @@
 <body>
 
 <!-- BACKGROUND VIDEO -->
-<video autoplay muted loop id="bgVideo">
+<video id="bgVideo" autoplay muted loop playsinline>
     <source src="videos/background.mp4" type="video/mp4">
 </video>
 
 <!-- LOCKER INTRO -->
 <div id="lockerScreen">
-    <video autoplay muted id="lockerVideo">
+    <video id="lockerVideo" autoplay muted playsinline>
         <source src="videos/locker.mp4" type="video/mp4">
     </video>
 </div>
@@ -22,14 +22,14 @@
 <!-- PIN SCREEN -->
 <div id="pinScreen">
     <h1>SECURE ACCESS</h1>
-    <input type="password" id="pinInput" maxlength="6" placeholder="● ● ● ● ● ●">
-    <button onclick="unlock()">UNLOCK</button>
+    <input id="pinInput" type="password" maxlength="6" placeholder="● ● ● ● ● ●">
+    <button id="unlockBtn">UNLOCK</button>
     <p id="pinMsg"></p>
 </div>
 
 <!-- TREE GROW VIDEO -->
 <div id="treeVideoScreen">
-    <video autoplay muted id="treeVideo">
+    <video id="treeVideo" autoplay muted playsinline>
         <source src="videos/tree-grow.mp4" type="video/mp4">
     </video>
 </div>
@@ -47,16 +47,15 @@
         <div class="node circle">
             <input placeholder="Father">
         </div>
-
         <div class="node circle">
             <input placeholder="Mother">
         </div>
     </div>
 
-    <div class="combine-line"></div>
+    <div class="merge-line"></div>
 
     <div class="node circle">
-        <input placeholder="Child (You)">
+        <input placeholder="You">
     </div>
 
     <div class="details">
