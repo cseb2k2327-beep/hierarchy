@@ -37,13 +37,11 @@ body {
 
 /* PIN SCREEN */
 #pinScreen {
-    display: none;              /* IMPORTANT */
+    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.85);
     z-index: 4;
-
-    /* flex applied ONLY when shown */
     align-items: center;
     justify-content: center;
     flex-direction: column;
