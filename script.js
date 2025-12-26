@@ -1,28 +1,41 @@
-const correctPin = "123456";
+const CORRECT_PIN = "123456";
 
-const locker = document.getElementById("lockerScreen");
+const lockerScreen = document.getElementById("lockerScreen");
+const lockerVideo = document.getElementById("lockerVideo");
+
 const pinScreen = document.getElementById("pinScreen");
-const treeVideoScreen = document.getElementById("treeVideoScreen");
-const treeScreen = document.getElementById("treeScreen");
+const pinInput = document.getElementById("pinInput");
 const pinMsg = document.getElementById("pinMsg");
+const unlockBtn = document.getElementById("unlockBtn");
 
+const treeVideoScreen = document.getElementById("treeVideoScreen");
+const treeVideo = document.getElementById("treeVideo");
+
+const treeScreen = document.getElementById("treeScreen");
+
+/* START LOCKER VIDEO */
+lockerVideo.play();
+
+/* SHOW PIN AFTER LOCKER */
 setTimeout(() => {
-    locker.style.display = "none";
+    lockerScreen.style.display = "none";
     pinScreen.style.display = "flex";
-}, 5000); // locker video duration
+    pinInput.focus();
+}, 5000);
 
-function unlock() {
-    const pin = document.getElementById("pinInput").value;
-
-    if (pin === correctPin) {
+/* PIN CHECK */
+unlockBtn.addEventListener("click", () => {
+    if (pinInput.value === CORRECT_PIN) {
         pinScreen.style.display = "none";
         treeVideoScreen.style.display = "block";
+        treeVideo.play();
 
         setTimeout(() => {
             treeVideoScreen.style.display = "none";
             treeScreen.style.display = "flex";
-        }, 6000); // tree grow video
+        }, 6000);
+
     } else {
-        pinMsg.textContent = "ACCESS DENIED";
+        pinMsg.textContent = "WRONG PIN";
     }
-}
+});
